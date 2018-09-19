@@ -361,7 +361,7 @@ class PkgConfig(object):
                 output = output.decode(sys.getfilesystemencoding())
                 print("HERE:output1:"+str([output]))
                 if output == u"-I/usr/include/libpng12 -lpng12\n":
-                    output = u"-I/usr/include/libpng16 -lpng16\n"
+                    output = u"-I../../mk/pygamesdl2/jni/png -lpng16\n"
                 use_defaults = False
                 for token in output.split():
                     attr = flag_map.get(token[:2])
