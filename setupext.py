@@ -358,9 +358,10 @@ class PkgConfig(object):
                 pass
             else:
                 output = output.decode(sys.getfilesystemencoding())
+                print("HERE:output1:"+str([output]))
                 if output == '-I/usr/include/libpng12 -lpng12':
                     output = '-I. -lpng16'
-                    print("HERE:output:"+output)
+                    print("HERE:output2:"+output)
                 use_defaults = False
                 for token in output.split():
                     attr = flag_map.get(token[:2])
