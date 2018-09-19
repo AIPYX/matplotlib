@@ -348,7 +348,7 @@ class PkgConfig(object):
         use_defaults = True
 
         if executable is not None:
-            if package == 'libpng'
+            if package == 'libpng':
                 command = alt_exec 
             else:
                 command = "{0} --libs --cflags ".format(executable)
