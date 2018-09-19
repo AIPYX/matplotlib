@@ -1313,7 +1313,7 @@ class Png(SetupPackage):
             alt_exec='echo -lpng16')
             #alt_exec='libpng-config --ldflags')
         Numpy().add_flags(ext)
-        print("Png ext:"+ext)
+        print("Png ext:"+str(ext))
         return ext
 
 
