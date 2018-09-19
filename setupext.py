@@ -1208,7 +1208,7 @@ class FreeType(SetupPackage):
         print("Building {0}".format(tarball))
         if sys.platform != 'win32':
             # compilation on all other platforms than windows
-            cc = 'CC="${0}/toolchains/llvm/prebuilt/linux-x86_64/bin/clang ${1}" '.format(os.environ.get('ANDROID_NDK', ''), os.environ.get('CLANG_FLAGS_QPY', ''))
+            cc = 'CC="{0}/toolchains/llvm/prebuilt/linux-x86_64/bin/clang {1}" '.format(os.environ.get('ANDROID_NDK', ''), os.environ.get('CLANG_FLAGS_QPY', ''))
             cflags = 'CFLAGS="{0} -fPIC" '.format(os.environ.get('CFLAGS', ''))
 
             subprocess.check_call(
