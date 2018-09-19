@@ -361,7 +361,6 @@ class PkgConfig(object):
                 print("HERE:output1:"+str([output]))
                 if output == u"-I/usr/include/libpng12 -lpng12\n":
                     output = u"-I. -lpng16\n"
-                    print("HERE:output2:"+output)
                 use_defaults = False
                 for token in output.split():
                     attr = flag_map.get(token[:2])
