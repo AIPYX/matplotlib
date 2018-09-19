@@ -350,14 +350,15 @@ class PkgConfig(object):
         if executable is not None:
             command = "{0} --libs --cflags ".format(executable)
 
-            if package == 'libpng':
-                output = '-I. -lpng16'
-            else:
-                try:
+            
+            try:
+                if package == 'libpng':
+                    output = '-I. -lpng16'
+                else:
                     output = check_output(command, shell=True,
                                           stderr=subprocess.STDOUT)
-                except subprocess.CalledProcessError:
-                    pass
+            except subprocess.CalledProcessError:
+                pass
             else:
                 output = output.decode(sys.getfilesystemencoding())
                 use_defaults = False
