@@ -347,11 +347,12 @@ class PkgConfig(object):
 
         use_defaults = True
 
-        print("setup_extension:"+package)
         if executable is not None:
-            command = "{0} --libs --cflags ".format(executable)
+            if package == 'libpng'
+                command = alt_exec 
+            else:
+                command = "{0} --libs --cflags ".format(executable)
 
-            print("setup_extension:"+command)
             try:
                 output = check_output(command, shell=True,
                                       stderr=subprocess.STDOUT)
@@ -377,10 +378,8 @@ class PkgConfig(object):
                     if os.path.exists(dir):
                         ext.library_dirs.append(dir)
             ext.libraries.extend(default_libraries)
-            print("TRUE ext.libraries:"+str(ext.libraries))
             return True
 
-        print("FALSE ext.libraries:"+str(ext.libraries))
         return False
 
     def get_version(self, package):
