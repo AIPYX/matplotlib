@@ -1214,7 +1214,7 @@ class FreeType(SetupPackage):
                 ['tar', 'zxf', tarball], cwd='build')
             subprocess.check_call(
                 [cflags + './configure --with-zlib=no --with-bzip2=no '
-                 '--with-png=no --with-harfbuzz=no'], shell=True, cwd=src_path)
+                 '--with-png=no --with-harfbuzz=no --host=arm-linux-androideabi --target=arm-linux-androideabi'], shell=True, cwd=src_path)
             subprocess.check_call(
                 [cflags + 'make'], shell=True, cwd=src_path)
         else:
