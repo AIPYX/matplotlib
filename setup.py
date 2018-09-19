@@ -125,7 +125,6 @@ class BuildExtraLibraries(BuildExtCommand):
     def run(self):
         for package in good_packages:
             package.do_custom_build()
-            print("BuildExtraLibraries:"+str(package))
 
         return BuildExtCommand.run(self)
 
