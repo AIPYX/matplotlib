@@ -1208,8 +1208,8 @@ class FreeType(SetupPackage):
         print("Building {0}".format(tarball))
         if sys.platform != 'win32':
             # compilation on all other platforms than windows
-            cc = 'CC="{0}/toolchains/llvm/prebuilt/linux-x86_64/bin/clang {1} -L{0}/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a" '.format(os.environ.get('ANDROID_NDK', ''), os.environ.get('CLANG_FLAGS_QPY', ''))
-            cflags = 'CFLAGS="{0} -fPIC " '.format(os.environ.get('CFLAGS', ''))
+            cc = 'CC="{0}/toolchains/llvm/prebuilt/linux-x86_64/bin/clang {1} -L{0}/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a" '.format(os.environ.get('ANDROID_NDK', ''), os.environ.get('CFLAGS', ''))
+            cflags = 'CFLAGS="{0} -fPIC " '.format(os.environ.get('CLANG_FLAGS_QPY', ''))
 
             subprocess.check_call(
                 ['tar', 'zxf', tarball], cwd='build')
