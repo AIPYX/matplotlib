@@ -1286,11 +1286,12 @@ class Png(SetupPackage):
             check_include_file(get_include_dirs(), 'png.h', 'png')
             return 'Using unknown version found on system.'
 
-        status, output = getstatusoutput("libpng-config --version")
-        if status == 0:
-            version = output
-        else:
-            version = None
+        #status, output = getstatusoutput("libpng-config --version")
+        #if status == 0:
+        #    version = output
+        #else:
+        #    version = None
+        verson = "1.6"
 
         try:
             return self._check_for_pkg_config(
