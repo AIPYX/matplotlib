@@ -506,7 +506,6 @@ class SetupPackage(object):
         """
         if version is None:
             version = pkg_config.get_version(package)
-            print("DEBUG:package:"+str(package)+":version:"+str(version))
 
             if version is None:
                 raise CheckFailed(
@@ -524,6 +523,8 @@ class SetupPackage(object):
                     (package, min_version, version))
 
         ext = self.get_extension()
+
+        print("DEBUG:ext:"+str(package)+":ext:"+str(ext))
         if ext is None:
             ext = make_extension('test', [])
             pkg_config.setup_extension(ext, package)
