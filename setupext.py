@@ -351,6 +351,7 @@ class PkgConfig(object):
         if executable is not None:
             command = "{0} --libs --cflags ".format(executable)
 
+            print("setup_extension:"+command)
             try:
                 output = check_output(command, shell=True,
                                       stderr=subprocess.STDOUT)
