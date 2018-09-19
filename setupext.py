@@ -506,6 +506,7 @@ class SetupPackage(object):
         """
         if version is None:
             version = pkg_config.get_version(package)
+            print("DEBUG:package:"+package+":version:"+version)
 
             if version is None:
                 raise CheckFailed(
@@ -1313,7 +1314,6 @@ class Png(SetupPackage):
             alt_exec='echo -lpng16')
             #alt_exec='libpng-config --ldflags')
         Numpy().add_flags(ext)
-        print("Png ext:"+str(ext))
         return ext
 
 
