@@ -1291,7 +1291,7 @@ class Png(SetupPackage):
         #    version = output
         #else:
         #    version = None
-        verson = "1.6"
+        version = "1.6"
 
         try:
             return self._check_for_pkg_config(
