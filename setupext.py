@@ -357,10 +357,10 @@ class PkgConfig(object):
             except subprocess.CalledProcessError:
                 pass
             else:
-                output = output.decode(sys.getfilesystemencoding()).strip()
+                output = output.decode(sys.getfilesystemencoding())
                 print("HERE:output1:"+str([output]))
-                if output == u'-I/usr/include/libpng12 -lpng12':
-                    output = u'-I. -lpng16'
+                if output == u"-I/usr/include/libpng12 -lpng12\n":
+                    output = u"-I. -lpng16\n"
                     print("HERE:output2:"+output)
                 use_defaults = False
                 for token in output.split():
