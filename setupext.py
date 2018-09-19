@@ -1310,7 +1310,8 @@ class Png(SetupPackage):
         ext = make_extension('matplotlib._png', sources)
         pkg_config.setup_extension(
             ext, 'libpng', default_libraries=['png', 'z'],
-            alt_exec='libpng-config --ldflags')
+            alt_exec='echo -lpng16')
+            #alt_exec='libpng-config --ldflags')
         Numpy().add_flags(ext)
         return ext
 
