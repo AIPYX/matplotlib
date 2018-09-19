@@ -352,11 +352,8 @@ class PkgConfig(object):
 
             
             try:
-                if package == 'libpng':
-                    output = '-I. -lpng16'
-                else:
-                    output = check_output(command, shell=True,
-                                          stderr=subprocess.STDOUT)
+                output = check_output(command, shell=True,
+                                      stderr=subprocess.STDOUT)
             except subprocess.CalledProcessError:
                 pass
             else:
