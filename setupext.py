@@ -506,7 +506,7 @@ class SetupPackage(object):
         """
         if version is None:
             version = pkg_config.get_version(package)
-            print("DEBUG:package:"+package+":version:"+version)
+            print("DEBUG:package:"+str(package)+":version:"+str(version))
 
             if version is None:
                 raise CheckFailed(
