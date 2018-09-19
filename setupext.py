@@ -348,16 +348,16 @@ class PkgConfig(object):
         use_defaults = True
 
         if executable is not None:
-            if package == 'libpng':
-                command = alt_exec 
-            else:
-                command = "{0} --libs --cflags ".format(executable)
+            command = "{0} --libs --cflags ".format(executable)
 
-            try:
-                output = check_output(command, shell=True,
-                                      stderr=subprocess.STDOUT)
-            except subprocess.CalledProcessError:
-                pass
+            if package == 'libpng':
+                output = '-I. -lpng16'
+            else:
+                try:
+                    output = check_output(command, shell=True,
+                                          stderr=subprocess.STDOUT)
+                except subprocess.CalledProcessError:
+                    pass
             else:
                 output = output.decode(sys.getfilesystemencoding())
                 use_defaults = False
