@@ -184,7 +184,7 @@ def get_base_dirs():
         'gnu0': ['/usr'],
         'aix5': ['/usr/local'],
         }
-    return basedir_map.get(sys.platform, ['/usr/local', '/usr'])
+    return basedir_map.get(sys.platform, [])
 
 
 def get_include_dirs():
