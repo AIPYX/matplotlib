@@ -252,6 +252,10 @@ distutils.command.build_ext.customize_compiler = my_customize_compiler
 
 
 def make_extension(name, files, *args, **kwargs):
+    print("make_extension:"+name)
+    print("make_extension:"+files)
+    print("make_extension:"+args)
+    print("make_extension:"+kwargs)
     """
     Make a new extension.  Automatically sets include_dirs and
     library_dirs to the base directories appropriate for this
@@ -524,7 +528,6 @@ class SetupPackage(object):
 
         ext = self.get_extension()
 
-        print("DEBUG:ext:"+str(package)+":ext:"+str(ext))
         if ext is None:
             ext = make_extension('test', [])
             pkg_config.setup_extension(ext, package)
