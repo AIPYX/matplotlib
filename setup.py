@@ -84,7 +84,7 @@ mpl_packages = [
     setupext.BackendGtk3Agg(),
     setupext.BackendGtk3Cairo(),
     setupext.BackendGtkAgg(),
-    setupext.BackendTkAgg(),
+    #setupext.BackendTkAgg(),
     setupext.BackendWxAgg(),
     setupext.BackendGtk(),
     setupext.BackendAgg(),
